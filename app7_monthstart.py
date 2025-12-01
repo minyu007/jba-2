@@ -284,29 +284,29 @@ if __name__ == "__main__":
             #     pages="all"
             # )
 
-            tables2 = tabula.read_pdf(
-                filename,
-                pages="all",
-                multiple_tables=False,
-                stream=True, 
-                guess=False,
-                pandas_options={'header': 5}
-            )
+            # tables2 = tabula.read_pdf(
+            #     filename,
+            #     pages="all",
+            #     multiple_tables=False,
+            #     stream=True, 
+            #     guess=False,
+            #     pandas_options={'header': 5}
+            # )
 
-            print('tables', tables)
-            print('tables2', tables2)
+            # print('tables', tables)
+            # print('tables2', tables2)
             dfs = [pd.DataFrame(table) for table in tables]
-            dfs2 = [pd.DataFrame(table2) for table2 in tables2]
+            # dfs2 = [pd.DataFrame(table2) for table2 in tables2]
 
             print('dfs', dfs)
-            print('dfs2', dfs2)
+            # print('dfs2', dfs2)
 
-            date_array_by_position = []
-            for i, df2 in enumerate(dfs2):
-                date_array_by_position = df2.iloc[:, 0].values
+            # date_array_by_position = []
+            # for i, df2 in enumerate(dfs2):
+            #     date_array_by_position = df2.iloc[:, 0].values
                 
-            print('301 date_array_by_position', date_array_by_position)
-            date_list = [s.split()[0] for s in date_array_by_position]
+            # print('301 date_array_by_position', date_array_by_position)
+            # date_list = [s.split()[0] for s in date_array_by_position]
             
             df = pd.concat(dfs, ignore_index=True)
             print('305 df.columns', df.columns)
