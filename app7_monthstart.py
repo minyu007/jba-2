@@ -292,8 +292,9 @@ if __name__ == "__main__":
                 guess=False,
                 pandas_options={'header': 5}
             )
-            
 
+            print('tables', tables)
+            print('tables2', tables2)
             dfs = [pd.DataFrame(table) for table in tables]
             dfs2 = [pd.DataFrame(table2) for table2 in tables2]
 
