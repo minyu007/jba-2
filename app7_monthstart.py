@@ -270,48 +270,43 @@ if __name__ == "__main__":
             
             save_file(pdf_url, filename)
 
-            tables = tabula.read_pdf(
-                filename,
-                pages="all",
-                multiple_tables=False,
-                lattice=True, 
-                guess=False,
-                pandas_options={'header': 1}
-            )
-            
             # tables = tabula.read_pdf(
-            #     filename,
-            #     pages="all"
-            # )
-
-            # tables2 = tabula.read_pdf(
             #     filename,
             #     pages="all",
             #     multiple_tables=False,
-            #     stream=True, 
-            #     guess=False,
-            #     pandas_options={'header': 5}
+            #     lattice=True, 
+            #     guess=False
             # )
+            
+            tables = tabula.read_pdf(
+                filename,
+                pages="all"
+            )
 
-            # print('tables', tables)
-            # print('tables2', tables2)
+            tables2 = tabula.read_pdf(
+                filename,
+                pages="all",
+                multiple_tables=False,
+                stream=True, 
+                guess=False,
+                pandas_options={'header': 4}
+            )
+
             dfs = [pd.DataFrame(table) for table in tables]
-            # dfs2 = [pd.DataFrame(table2) for table2 in tables2]
+            dfs2 = [pd.DataFrame(table2) for table2 in tables2]
 
-            print('dfs', dfs)
-            # print('dfs2', dfs2)
-
-            # date_array_by_position = []
-            # for i, df2 in enumerate(dfs2):
-            #     date_array_by_position = df2.iloc[:, 0].values
-                
-            # print('301 date_array_by_position', date_array_by_position)
-            # date_list = [s.split()[0] for s in date_array_by_position]
+            date_array_by_position = []
+            for i, df2 in enumerate(dfs2):
+                date_array_by_position = df2.iloc[:, 0].values
+            print(date_array_by_position)
+            date_list = [s.split()[0] for s in date_array_by_position]
             
             df = pd.concat(dfs, ignore_index=True)
-            print('305 df.columns', df.columns)
-            print('306 df', df)
+            # print(df.columns)
+
+            # df.insert(loc=0, column='Date', value=['2025-11-04'])
             
+            print(df)
             df.columns=[
                 'Date',
                 '1WEEK',
@@ -327,13 +322,8 @@ if __name__ == "__main__":
                 '10MONTH',
                 '11MONTH',
                 '12MONTH']
-
-            
             df = split_row_to_rows(df)
-            print('324 df', df)
-            
             # df.insert(0, 'Date', date_list)
-            print('328 df', df)
 
             # Convert Date column to datetime if it's not already
             df['Date'] = pd.to_datetime(df['Date'])
