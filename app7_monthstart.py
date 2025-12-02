@@ -306,7 +306,7 @@ if __name__ == "__main__":
             df = pd.concat(dfs, ignore_index=True)
             print('305 df.columns', df.columns)
             print('306 df', df)
-            df.insert(loc=0, column='Date', value=['2025-12-01'])
+            df.insert(loc=0, column='Date', value=['2025-12-01', '2025-12-02'])
             df.columns=[
                 'Date',
                 '1WEEK',
