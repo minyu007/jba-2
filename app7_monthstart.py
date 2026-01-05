@@ -270,19 +270,19 @@ if __name__ == "__main__":
             
             save_file(pdf_url, filename)
 
-            tables = tabula.read_pdf(
-                filename,
-                pages="all",
-                multiple_tables=False,
-                lattice=True, 
-                guess=False,
-                pandas_options={'header': 1}
-            )
-            
             # tables = tabula.read_pdf(
             #     filename,
-            #     pages="all"
+            #     pages="all",
+            #     multiple_tables=False,
+            #     lattice=True, 
+            #     guess=False,
+            #     pandas_options={'header': 1}
             # )
+            
+            tables = tabula.read_pdf(
+                filename,
+                pages="all"
+            )
 
             tables2 = tabula.read_pdf(
                 filename,
@@ -306,7 +306,7 @@ if __name__ == "__main__":
             df = pd.concat(dfs, ignore_index=True)
             print('305 df.columns', df.columns)
             print('306 df', df)
-            # df.insert(loc=0, column='Date', value=['2025-12-01', '2025-12-02', '2025-12-03'])
+            df.insert(loc=0, column='Date', value=['2026-01-05'])
             df.columns=[
                 'Date',
                 '1WEEK',
