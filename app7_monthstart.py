@@ -306,6 +306,10 @@ if __name__ == "__main__":
             df = pd.concat(dfs, ignore_index=True)
             print('305 df.columns', df.columns)
             print('306 df', df)
+           
+
+            
+            df = split_row_to_rows(df)
             df.insert(loc=0, column='Date', value=['2026-01-05', '2026-01-06'])
             df.columns=[
                 'Date',
@@ -322,9 +326,6 @@ if __name__ == "__main__":
                 '10MONTH',
                 '11MONTH',
                 '12MONTH']
-
-            
-            df = split_row_to_rows(df)
             print('324 df', df)
             
             # df.insert(0, 'Date', date_list)
