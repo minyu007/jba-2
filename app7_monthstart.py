@@ -308,7 +308,7 @@ if __name__ == "__main__":
             print('306 df', df)
             df.insert(loc=0, column='Date', value=['2026-01-05','2026-01-06'])
             df.columns=[
-                
+                'Date',
                 '1WEEK',
                 '1MONTH',
                 '2MONTH',
