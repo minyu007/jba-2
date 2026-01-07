@@ -308,9 +308,9 @@ if __name__ == "__main__":
             print('306 df', df)
            
 
-            
-            df = split_row_to_rows(df)
             df.insert(loc=0, column='Date', value=['2026-01-05', '2026-01-06', '2026-01-07'])
+            df = split_row_to_rows(df)
+            
             df.columns=[
                 'Date',
                 '1WEEK',
