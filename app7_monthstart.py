@@ -284,17 +284,17 @@ if __name__ == "__main__":
                 pages="all"
             )
 
-            tables2 = tabula.read_pdf(
-                filename,
-                pages="all",
-                multiple_tables=False,
-                stream=True, 
-                guess=False,
-                pandas_options={'header': 2}
-            )
+            # tables2 = tabula.read_pdf(
+            #     filename,
+            #     pages="all",
+            #     multiple_tables=False,
+            #     stream=True, 
+            #     guess=False,
+            #     pandas_options={'header': 2}
+            # )
 
             dfs = [pd.DataFrame(table) for table in tables]
-            dfs2 = [pd.DataFrame(table2) for table2 in tables2]
+            # dfs2 = [pd.DataFrame(table2) for table2 in tables2]
 
             # date_array_by_position = []
             # for i, df2 in enumerate(dfs2):
