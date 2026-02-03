@@ -270,19 +270,19 @@ if __name__ == "__main__":
             
             save_file(pdf_url, filename)
 
-            tables = tabula.read_pdf(
-                filename,
-                pages="all",
-                multiple_tables=False,
-                lattice=True, 
-                guess=False,
-                pandas_options={'header':2}
-            )
-            
             # tables = tabula.read_pdf(
             #     filename,
-            #     pages="all"
+            #     pages="all",
+            #     multiple_tables=False,
+            #     lattice=True, 
+            #     guess=False,
+            #     pandas_options={'header':0}
             # )
+            
+            tables = tabula.read_pdf(
+                filename,
+                pages="all"
+            )
 
             tables2 = tabula.read_pdf(
                 filename,
