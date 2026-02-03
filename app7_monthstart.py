@@ -312,7 +312,6 @@ if __name__ == "__main__":
             df = split_row_to_rows(df)
            
             df.columns=[
-                'Date',
                 '1WEEK',
                 '1MONTH',
                 '2MONTH',
