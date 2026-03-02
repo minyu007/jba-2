@@ -311,21 +311,21 @@ if __name__ == "__main__":
            
             df = split_row_to_rows(df)
            
-            df.columns=[
-                'Date',
-                '1WEEK',
-                '1MONTH',
-                '2MONTH',
-                '3MONTH',
-                '4MONTH',
-                '5MONTH',
-                '6MONTH',
-                '7MONTH',
-                '8MONTH',
-                '9MONTH',
-                '10MONTH',
-                '11MONTH',
-                '12MONTH']
+            # df.columns=[
+            #     'Date',
+            #     '1WEEK',
+            #     '1MONTH',
+            #     '2MONTH',
+            #     '3MONTH',
+            #     '4MONTH',
+            #     '5MONTH',
+            #     '6MONTH',
+            #     '7MONTH',
+            #     '8MONTH',
+            #     '9MONTH',
+            #     '10MONTH',
+            #     '11MONTH',
+            #     '12MONTH']
             df.insert(loc=0, column='Date', value=['2026-03-02'])
             print('324 df', df)
             
