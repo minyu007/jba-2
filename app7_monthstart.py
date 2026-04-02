@@ -354,10 +354,11 @@ if __name__ == "__main__":
             df.to_excel(excel_path)  # 保存Excel文件
             
             df = df.head(30)
-            print(df)
+            print('head30', df)
+            
             html_table = df.fillna('').to_html(border=1)
             df.fillna(0, inplace=True)
-            
+            print('email sending')
             sender_email = "chengguoyu_82@163.com"
             sender_password = "DUigKtCtMXw34MnB"
             recipient_emails = ["zling@jenseninvest.com","hwang@jenseninvest.com", "yqguo@jenseninvest.com", "13889632722@163.com", "chengguoyu_82@163.com"]
