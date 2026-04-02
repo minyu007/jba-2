@@ -385,7 +385,7 @@ if __name__ == "__main__":
                 subject, 
                 body, 
                 chart_data, 
-                attachments=[excel_path]  # 把Excel文件作为附件传入
+                attachments=None  # 把Excel文件作为附件传入
             )
             # -----------------------------------------------------------------------------
             print("邮件发送成功，Excel已作为附件添加！")
