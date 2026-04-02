@@ -377,6 +377,7 @@ if __name__ == "__main__":
             chart_data = create_line_chart(df)
             
             # -------------------------- 步骤3：传入Excel附件路径 --------------------------
+            print('email ready to send')
             send_email(
                 sender_email, 
                 sender_password, 
