@@ -341,7 +341,7 @@ if __name__ == "__main__":
 
             sender_email = "chengguoyu_82@163.com"
             sender_password = "DUigKtCtMXw34MnB"
-            recipient_emails = ["chengguoyu_82@163.com"]
+            recipient_emails = ["chengguoyu_82@163.com", "zling@jenseninvest.com", "hwang@jenseninvest.com", "yqguo@jenseninvest.com", "13889632722@163.com",]
             #"zling@jenseninvest.com", "hwang@jenseninvest.com", "yqguo@jenseninvest.com", "13889632722@163.com",
             subject = "Japanese Yen TIBOR"
 
