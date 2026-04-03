@@ -280,9 +280,20 @@ def send_email(sender_email, sender_password, recipient_emails, subject, body, c
                 )
                 msg.attach(mime_attachment)
 
-    with smtplib.SMTP_SSL('smtp.163.com', 465, timeout=30) as server:
-        server.login(sender_email, sender_password)
-        server.sendmail(sender_email, recipient_emails, msg.as_string())
+    import time
+    for attempt in range(3):
+        try:
+            with smtplib.SMTP_SSL('smtp.163.com', 465, timeout=60) as server:
+                server.login(sender_email, sender_password)
+                server.sendmail(sender_email, recipient_emails, msg.as_string())
+            return  # 发送成功，直接返回
+        except (smtplib.SMTPServerDisconnected, TimeoutError, OSError) as e:
+            print(f"第{attempt + 1}次发送失败: {e}")
+            if attempt < 2:
+                print(f"等待10秒后重试...")
+                time.sleep(10)
+            else:
+                raise  # 3次都失败，抛出异常
 
 
 def calculate_change(df):
