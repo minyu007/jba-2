@@ -224,9 +224,9 @@ def create_line_chart(df):
                 xytext=(0, offset_y),
                 textcoords='offset points',
                 ha='center', va='center',
-                fontsize=7.5, fontweight='bold', color=txt_color,
-                bbox=dict(boxstyle='round,pad=0.3', fc=bg, ec=txt_color, alpha=0.9, linewidth=0.7),
-                arrowprops=dict(arrowstyle='->', color=txt_color, linewidth=1, shrinkA=0, shrinkB=3),
+                fontsize=10, fontweight='normal', color=txt_color,
+                bbox=dict(boxstyle='round,pad=0.35', fc=bg, ec=txt_color, alpha=0.9, linewidth=0.8),
+                arrowprops=dict(arrowstyle='->', color=txt_color, linewidth=1.2, shrinkA=0, shrinkB=3),
                 zorder=5,
             )
 
@@ -236,8 +236,8 @@ def create_line_chart(df):
         fontsize=18, fontweight='bold', color='#1F2937',
         pad=20,
     )
-    ax.set_ylabel('Rate (%)', fontsize=12, color='#374151', labelpad=10)
-    ax.set_xlabel('Date', fontsize=12, color='#374151', labelpad=10)
+    ax.set_ylabel('Rate (%)', fontsize=14, color='#374151', labelpad=10)
+    ax.set_xlabel('Date', fontsize=14, color='#374151', labelpad=10)
 
     # --- 网格 ---
     ax.grid(True, which='major', axis='y', color=GRID_COLOR, linewidth=0.8, alpha=0.7)
@@ -246,8 +246,8 @@ def create_line_chart(df):
     # --- X轴日期格式 ---
     ax.xaxis.set_major_formatter(mdates.DateFormatter('%m/%d'))
     ax.xaxis.set_major_locator(mdates.AutoDateLocator())
-    plt.xticks(rotation=45, ha='right', fontsize=10, color='#6B7280')
-    plt.yticks(fontsize=10, color='#6B7280')
+    plt.xticks(rotation=45, ha='right', fontsize=12, color='#6B7280')
+    plt.yticks(fontsize=12, color='#6B7280')
 
     # --- 边框 ---
     for spine in ['top', 'right']:
@@ -341,17 +341,17 @@ def build_data_table_html(df):
     mono_font = "'SF Mono',Menlo,Consolas,'Liberation Mono',monospace"
 
     th_style = (
-        f'padding:12px 14px; font-size:13px; font-weight:700; color:#1E3A5F; '
+        f'padding:6px 8px; font-size:10px; font-weight:700; color:#1E3A5F; '
         f'text-align:center; border-bottom:2px solid #2563EB; background-color:#EFF6FF; '
         f'font-family:{font_family}; letter-spacing:0.4px; text-transform:uppercase;'
     )
     td_style_num = (
-        f'padding:10px 14px; font-size:13px; text-align:right; '
+        f'padding:5px 8px; font-size:10px; text-align:right; '
         f'border-bottom:1px solid #E5E7EB; color:#1F2937; '
         f'font-family:{mono_font}; letter-spacing:0.3px;'
     )
     td_style_date = (
-        f'padding:10px 14px; font-size:13px; text-align:left; '
+        f'padding:5px 8px; font-size:10px; text-align:left; '
         f'border-bottom:1px solid #E5E7EB; font-weight:600; color:#1E3A5F; '
         f'white-space:nowrap; font-family:{font_family};'
     )
@@ -481,8 +481,8 @@ if __name__ == "__main__":
 
             sender_email = "chengguoyu_82@163.com"
             sender_password = "DUigKtCtMXw34MnB"
-            # recipient_emails = ["chengguoyu_82@163.com"]
-            recipient_emails = ["chengguoyu_82@163.com", "zling@jenseninvest.com", "hwang@jenseninvest.com", "yqguo@jenseninvest.com", "13889632722@163.com",]
+            recipient_emails = ["chengguoyu_82@163.com"]
+            # recipient_emails = ["chengguoyu_82@163.com", "zling@jenseninvest.com", "hwang@jenseninvest.com", "yqguo@jenseninvest.com", "13889632722@163.com",]
             #"zling@jenseninvest.com", "hwang@jenseninvest.com", "yqguo@jenseninvest.com", "13889632722@163.com",
             subject = "Japanese Yen TIBOR"
 
